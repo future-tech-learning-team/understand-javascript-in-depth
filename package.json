@@ -2,7 +2,7 @@
   "name": "understand-javascript-in-depth",
   "version": "0.0.1",
   "description": "examples for understanding javascript in depth",
-  "author": "chenyiqin",
+  "author": "HISAME SHIZUMARU",
   "license": "MIT",
   "scripts": {
      "dsb": "bash ./examples/scope/dynamic-scope.bash"
