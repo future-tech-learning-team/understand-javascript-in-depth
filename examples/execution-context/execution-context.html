@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <pre>
+        <code class="javascript">
+        var a = '1';
+        function a1 (num1, num2) {
+            function plus() {
+                return num1 + num2;
+            }
+            return a + plus();
+        }
+        a1(1, 2);
+        </code>
+    </pre>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    var a = '1';
+    function a1 (num1, num2) {
+        function plus() {
+            return num1 + num2;
+        }
+        debugger;
+        return a + plus();
+    }
+    debugger;
+    a1(1, 2);
+</script>
+</body>
+</html>

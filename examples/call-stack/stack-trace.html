@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <pre>
+        <code class="javascript">
+        var a = function() {
+            throw new Error('a function exception');
+        }
+        var b = function() {
+            console.log('b');
+            a();
+       };
+
+        var c = function() {
+            console.log('c');
+            b();
+        };
+        c();
+        </code>
+    </pre>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../../js/jquery.js"></script>
+<script>
+    var a = function() {
+        throw new Error('a function exception');
+    }
+    var b = function() {
+        console.log('b');
+        a();
+    };
+
+    var c = function() {
+        console.log('c');
+        b();
+    };
+    c();
+</script>
+</body>
+</html>
