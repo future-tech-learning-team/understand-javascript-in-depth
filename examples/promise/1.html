@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <pre>
+        <code class="javascript">
+        const promise = new Promise((resolve, reject) => {
+            console.log(1)
+            resolve()
+            console.log(2)
+        })
+        promise.then(() => {
+            console.log(3)
+        })
+        console.log(4)
+        </code>
+    </pre>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    const promise = new Promise((resolve, reject) => {
+        console.log(1)
+        resolve()
+    console.log(2)
+    })
+    promise.then(() => {
+        console.log(3)
+    })
+    console.log(4)
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <pre>
+        <code class="javascript">
+        const promise = Promise.resolve()
+          .then(() => {
+            return promise
+          })
+        promise.catch(console.error)
+        </code>
+    </pre>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    const promise = Promise.resolve()
+        .then(() => {
+        return promise
+    })
+    promise.catch(console.error)
+</script>
+</body>
+</html>

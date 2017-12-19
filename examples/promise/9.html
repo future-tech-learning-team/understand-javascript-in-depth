@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <pre>
+        <code class="javascript">
+        Promise.resolve()
+        .then(function success (res) {
+            throw new Error('error')
+        }, function fail1 (e) {
+            console.error('fail1: ', e)
+        })
+        .catch(function fail2 (e) {
+            console.error('fail2: ', e)
+        })
+        </code>
+    </pre>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    Promise.resolve()
+    .then(function success (res) {
+        throw new Error('error')
+    }, function fail1 (e) {
+        console.error('fail1: ', e)
+    })
+    .catch(function fail2 (e) {
+        console.error('fail2: ', e)
+    })
+</script>
+</body>
+</html>

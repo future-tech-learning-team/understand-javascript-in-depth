@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <pre>
+        <code class="javascript">
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log('once')
+                resolve('success')
+            }, 1000)
+        });
+
+        const start = Date.now();
+        promise.then((res) => {
+            console.log(res, Date.now() - start);
+        });
+        promise.then((res) => {
+            console.log(res, Date.now() - start);
+        });
+        </code>
+    </pre>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('once')
+            resolve('success')
+        }, 1000)
+    });
+
+    const start = Date.now();
+    promise.then((res) => {
+        console.log(res, Date.now() - start);
+    });
+    promise.then((res) => {
+        console.log(res, Date.now() - start);
+    });
+</script>
+</body>
+</html>

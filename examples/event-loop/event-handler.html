@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+</head>
+<body>
+<div style="text-align: center; margin-top: 100px; font-size: 20px;">
+    <a href="javascript:void(0);" id="link">link</a>
+</div>
+<script>
+    function init() {
+        var changeColor = function() {
+            debugger;
+            this.style.color = 'red';
+        };
+        var link = document.getElementById('link');
+        link.addEventListener('click', changeColor);
+        debugger;
+    }
+    debugger;
+    init();
+</script>
+</body>
+</html>

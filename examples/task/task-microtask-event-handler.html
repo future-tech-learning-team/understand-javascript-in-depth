@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <div class="outer" style="width: 200px; height: 200px; margin:0 auto; border: 6px solid #7c7c7c">
+        <div class="inner" style="width: 190px; height: 190px; border: 3px solid #cccccc"></div>
+    </div>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../../js/jquery.js"></script>
+<script>
+    var outer = document.querySelector('.outer');
+    var inner = document.querySelector('.inner');
+
+    new MutationObserver(function() {
+        debugger;
+        console.log('mutate');
+    }).observe(outer, {
+        attributes: true
+    });
+
+    function onClick() {
+        debugger;
+        console.log('click');
+
+        setTimeout(function() {
+            debugger;
+            console.log('settimeout');
+        }, 0);
+
+        Promise.resolve().then(function() {
+            debugger;
+            console.log('promise');
+        });
+
+        outer.setAttribute('data-random', Math.random());
+    }
+
+    inner.addEventListener('click', onClick);
+    outer.addEventListener('click', onClick);
+</script>
+</body>
+</html>
