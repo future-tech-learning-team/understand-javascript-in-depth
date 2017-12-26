@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <pre>
+        <code class="javascript">
+        function ParentClass() {
+        this.instanceProperty = 'instanceProperty';
+            return this;
+        }
+        ParentClass.staticProperty = 'staticProperty';
+        ParentClass.prototype = {
+            prototypeProperty: 'prototypeProperty',
+        };
+
+        function ChildClass() {
+            ParentClass.apply(this, arguments);
+            return this;
+        }
+
+        function inherits (subClass, superClass) {
+            if (typeof superClass !== "function" && superClass !== null) {
+                throw new TypeError("Super expression must either be null or a function");
+            }
+
+            subClass.prototype = Object.create(superClass && superClass.prototype, {
+                constructor: {
+                    value: subClass,
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
+                }
+            });
+            if (superClass) {
+                if (Object.setPrototypeOf) {
+                    Object.setPrototypeOf(subClass, superClass);
+                } else {
+                    subClass.__proto__ = superClass;
+                    console.log('setPrototypeOf not support')
+                }
+            }
+        }
+
+        inherits(ChildClass, ParentClass);
+
+        console.log('ChildClass = ');
+        console.log(ChildClass);
+        console.log(ChildClass.constructor);
+        console.log('ChildClass.staticProperty = ');
+        console.log(ChildClass.staticProperty);
+
+        var childClassInstance = new ChildClass();
+
+        console.log('childClassInstance.instanceProperty = ');
+        console.log(childClassInstance.instanceProperty);
+        console.log('childClassInstance.prototypeProperty = ');
+        console.log(childClassInstance.prototypeProperty);
+        </code>
+    </pre>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    function ParentClass() {
+        this.instanceProperty = 'instanceProperty';
+        return this;
+    }
+    ParentClass.staticProperty = 'staticProperty';
+    ParentClass.prototype = {
+        prototypeProperty: 'prototypeProperty',
+    };
+
+    function ChildClass() {
+        ParentClass.apply(this, arguments);
+        return this;
+    }
+
+    function inherits (subClass, superClass) {
+        if (typeof superClass !== "function" && superClass !== null) {
+            throw new TypeError("Super expression must either be null or a function");
+        }
+
+        subClass.prototype = Object.create(superClass && superClass.prototype, {
+            constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true
+            }
+        });
+        if (superClass) {
+            if (Object.setPrototypeOf) {
+                Object.setPrototypeOf(subClass, superClass);
+            } else {
+                subClass.__proto__ = superClass;
+                console.log('setPrototypeOf not support, use set __proto__!');
+            }
+        }
+    }
+
+    inherits(ChildClass, ParentClass);
+
+    console.log('ChildClass.staticProperty = ', ChildClass.staticProperty);
+
+    var childClassInstance = new ChildClass();
+
+    console.log('childClassInstance.instanceProperty = ', childClassInstance.instanceProperty);
+    console.log('childClassInstance.prototypeProperty = ', childClassInstance.prototypeProperty);
+</script>
+</body>
+</html>

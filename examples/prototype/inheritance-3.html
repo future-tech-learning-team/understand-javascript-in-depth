@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/common.css"/>
+    <link rel="stylesheet" href="../../highlight/styles/monokai-sublime.css"/>
+</head>
+<body>
+<div>
+    <pre>
+        <code class="javascript">
+        var Parent = function(name){
+            this.name = name;
+        };
+        Parent.prototype.getName = function(){
+            return this.name;
+        };
+
+        var Child = function(name){
+            Parent.apply(this, arguments);
+        };
+        Child.prototype = new Parent();
+
+        var parent = new Parent('parent');
+        var child = new Child('child');
+
+        console.log(parent.getName());
+        console.log(child.getName());
+        </code>
+    </pre>
+</div>
+<script src="../../highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    var Parent = function(name){
+        this.name = name;
+    };
+    Parent.prototype.getName = function(){
+        return this.name;
+    };
+
+    var Child = function(name){
+        Parent.apply(this, arguments);
+    };
+    Child.prototype = new Parent();
+
+    var parent = new Parent('parent');
+    var child = new Child('child');
+
+    console.log(parent.getName()); //parent
+    console.log(child.getName()); //child
+</script>
+</body>
+</html>
