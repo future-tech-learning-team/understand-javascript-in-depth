@@ -29,6 +29,7 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <script>
     window.onunhandledrejection = function(error) {
+        console.log('onunhandledrejection...')
         console.log(error);
     };
     const f = async function() {
